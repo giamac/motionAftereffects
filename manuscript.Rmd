@@ -1,0 +1,188 @@
+---
+title: "Reversed motion direction illusion: influence of (spatially congruent) subsequent own-body motion on self-motion perception"
+shorttitle: "Reversed motion direction illusion"
+author:
+  - name: First Author
+    affiliation: 1
+    corresponding: yes    # Define only one corresponding author
+    address: Postal address
+    email: my@email.com
+  - name: Ernst-August Doelle
+    affiliation: "1,2"
+affiliation:
+  - id: 1
+    institution: Wilhelm-Wundt-Univerdddsity
+  - id: 2
+    institution: Konstanz Business School
+
+abstract: |
+  Enter abstract here (note the indentation, if you start a new paragraph).
+
+author_note: |
+  Complete departmental affiliations for each author (note the indentation, if you start a new paragraph).
+
+  Enter author note here.
+
+keywords: "keywords"
+
+wordcount: X
+
+class: man
+lang: english
+figsintext: no
+figurelist: no
+tablelist: no
+lineno: yes
+bibliography:
+  - references.bib
+output: papaja::apa6_pdf
+---
+
+```{r message = FALSE, warning = FALSE}
+library("papaja")
+library("rstan")
+library("brms")
+```
+
+# Introduction
+
+## Motion aftereffects in general and visual
+- Motion aftereffects (MAE) are a multisensory phenomenon in which the visual, auditory, proproceptive or even vestibular (e.g. velocity storage) modality are presented with a moving stimulus and afterwards perceive a static pattern to move in the opptrtosite direction crane 2012 tra-aft[@crane_foreaft_2012]. 
+- In other areas of sensory perception: stimulus causes subsequent similar stimulus to be perceived more neutral [@coniglio_human_2014]
+- "MAE as a form of sensory error correction" (Anstis et al. 1998) 
+- Multisensory aspect could suggest higher level mechanisms common to perception of motion, independent of modality. 
+- Why are aftereffects so important? They are a powerful behavioral tool to study computational mechansims underyling motion processing, especially visual. (See Cuturi)
+
+## Motion aftereffects from visual to optic flow to self motion
+- Visual motion is essential in self motion perception (maybe link to previous project self vs. object motion)
+- In fact, extensive stimulation of retina with visual motion can lead to feeling of self motion (Vection).
+- Report VAE (Brandt, Seno, Wallach, etc.)
+
+## Motion aftereffect and vestibular
+- Vection -> vestibular component. 
+- Velocity storage: Perceptive aftereffects after extensive yaw rotation (Hess & Angelaki, 1997, Bertolini, 2011), but not in roll (Bertolini 2008) and not with isolated linear motion (Hess and Angelaki 1997). Velocity storage: percistence of initial perception (Bertolini 2011), However, such a VSM model did not predict data in yaw rotation after effects experiment (Coniglio and Crane, 2014)
+- Why interesting for vestibular modality?: Vestibular organs are essential in tracking position of the self and thus highly involved in perception of self motion. 
+- Given multimodality of motion aftereffects it has been investigated whether such MAE can be found in vestibular modality as well. 
+- In Vestibular Modality: "Gilingham illusion": Pilots tend to counter previous roll motion with a motion in the same direction: False perception of subsequent roll in the opposite direction. Type something. This has been investigated in more detail. After effects have been found for translations (Crane, 2012), targeting the otoliths, as well as for roll rotation (Crane, 2012) and yaw rotation (Coniglio and Crane, 2014) targeting the semicircular canals using psychophysics techniques  
+- Studies by Crane. 
+
+## motion aftereffect and multimodality (visuo-vestibular)
+- However, in daily life vestibular and visual motion are hardly processed isolated but combined at very early stage. 
+- Thus, it has been investigated whether the visuo-vestibular coupling is able to produce visuo-vestibular MAE (Cuturi). 
+- MAE has been shown for other multimodal combinantions, though with mixed results (Ehrsson, Klonke)
+- In the field of visuo-vestibular integration there have been mixed results as well. Cuturi could show visuo-vestibular aftereffects, while Crane (2013) could not.
+- However, the vestibular system is not unimodal but relies on two organs that code rotation (canals) and translation (otoliths), which are integrated at a very early stage. 
+- Vestibular perception investigated separated (Grabherr, etc.), but with few exceptions [@crane_perception_2016] as usually the stimulation of otoliths and canals are combined. In such experiments, canals' information appears to dominate the overall perception [@crane_perception_2016]
+- Thus, we wanted to test, whether such MAE also transfer from rotation to translation and vice versa based on data from an experiment that was originally planned as a posner paradigm in the vestibular modality. 
+
+## Decision making process
+- Moreover, we explore the decision making process of the perceptual decisions in more detail with the help of a Drift Diffusion Model that allows to estimate different parameters involved in the process and thus to describe the perception (Merfeld et al.) 
+
+## What are we going to do
+- Here, we study how on vestibular modality influences the other in a subsequent trial with short ISI
+
+# Experiment 1
+
+## Methods
+
+
+### Participants
+
+Twelve healthy participants participated in the first experiment (four female, mean age 27, range 24-30 years). All participants were right handed according to a Gemran version of the handedness questionnaire by Chapman and Chapman [@chapman_measurement_1987]. One of the participants received a course credit for participation. None of the participants reported a history of relevant neurological, vestibular or attentional disorders. The study was approved by the ethics committeeof the University of Bern and all participants gave written informed consent prior to the experiment in accordance with the Declaration of Helsinki.
+
+### Motion stimuli
+
+A six degree of freedom motion base (6DOF2000E, Moog Inc., East Aurora, NY) and in-house software were used to generate the motion stimuli. Cue (antecedent) stimuli consisted of translations with single cycle sinusoidal acceleration and a frequency $f$ of 5 Hz ($a(t) = A\sin(2 \pi ft) = A\sin(\frac{2 \pi t}{T})$, $T = \frac{1}{f}$) along the y-axis (left/right) and the x-axis (forth/back) as used in previous studies (see e.g. Grabherr et al. 2008; Benson et al. 1989; Crane 2012). Acceleration amplitude (A) was set to $0.25 \frac{m}{s^2}$, i.e. a peak velocity of $0.016 \frac{m}{s}$ ($v_{max} = \frac{AT}{\pi}$) and a displacement of 0.0016 m ($\Delta p = \frac{AT^2}{2\pi}$). For the target (subsequent) stimuli the same acceleration profile as for the cue stimuli was used but with yaw rotations about an earth-vertical axis (left/right). The acceleration amplitude was set to $24 \frac{deg}{s^2}$ ($v_{max} = 1.53 \frac{deg}{s}, \Delta p = .153 deg$).
+
+### Experimental design
+
+Within each participant Cue Congruency (three levels: congruent, incongruent and neutral) and interstimulus interval (ISI, four levels: 50 ms, 100 ms, 200 ms and 600 ms) were manipulated. In congruent trials y-axis translations were followed by yaw rotations to the corresponding side. In incongruent trials y-axis translations preceeded yaw rotations to the opposite side. Neutral trials consisted of a translation along the x-axis and a subsequent yaw rotation. The combination of the two factors resulted in 32 motion sets. Every motion set was repeated six times per participant. In-house software based on labVIEW (CITE) was used to record participants' response and reaction times.
+
+### Experimental procedure
+
+Participants were seated upright in a car seat with a five-point harness which was mounted on the motion base. Their head was centered and fixated with a helmet. The experiments were conducted in the dark and participants were blindfolded to prevent the processing of visual cues. White noise was delivered to in-ear headphones at approximately 60 dB to mask sounds from the motion base. Participants were instructed to indicate the perceived direction of the second motion as fast as possible by pressing the corresponding button in either their left or right hand. In case of uncertainty, participants had to make their best guess. The first motion was described as a time varying warning cue, which would indicate the beginning of the second motion but not predict its direction. Practice trials were administered until participants understood the task. Once a participant was comfortable with the task, motion sets were presented in three blocks. The length of the breaks between blocks were determined by participants. In total, 192 trials were randomly presented (48 congruent, 48 incongruent, 96 neutral). A trial consisted of a cue stimulus (200 ms), an ISI (50-600 ms), a target stimulus (200 ms), time to respond (max. 2500 ms), return to the origin (1100 ms) and an intertrial interval of about 1000 ms.
+
+### Data analysis
+
+All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages
+
+## Results
+
+## Discussion
+
+# Experiment 2
+
+The results of Experiment 1 led to the question whether the consistent directional misperception of the second motion still exists when a rotation (cue) is preceding a translation (target). The sequence of the two motions was therefore interchanged so that a left/right yaw rotation preceded a left/right translation (while the motion trajectories stayed otherwise the same). Only congruent and incongruent cues were presented, since no rotations could serve as “neutral” cues for lateral translations in the horizontal plane. A pitch or roll rotation in an upright participant would lead inevitably to a tilted/skewed subsequent motion.
+
+## Methods
+
+### Participants
+
+For experiment 2, twelve new participants were recruited. One participant pressed the left button in 92% of all trials and was excluded from the study. The remaining 11 participants (nine female, mean age 25, range 21-38 years). All participants were right handed according to a German version of the handedness questionnaire by Chapman and Chapman [@chapman_measurement_1987]. None of the participants reported a history of relevant neurological, vestibular or attentional disorders. The study was approved by the ethics committeeof the University of Bern and all participants gave written informed consent prior to the experiment in accordance with the Declaration of Helsinki.
+
+### Motion stimuli
+
+Cue stimuli consisted of yaw rotations about an earth-vertical axis (left/right). They consisted of single-cycles of sinusoidal acceleration at a frequency of 5 Hz. Acceleration amplitude was $24 \frac{deg}{s^2}$ ($v_{max} = 1.53 \frac{deg}{s}, \Delta p = .0153 deg$). Target stimuli were translations along the y-axis (left/right). They consisted of the same acceleration profile as the cue stimuli. Frequency was again 5 Hz. Acceleration amplitude was $0.25 \frac{m}{s^2}$ ($v_{max} = .016 \frac{m}{s}, \Delta p = .0016 m$).
+
+### Experimental design
+
+Within each participant Cue Congruency (three levels: congruent, incongruent) and interstimulus interval (ISI, four levels: 50 ms, 100 ms, 200 ms and 600 ms) were manipulated. In congruent trials yaw rotation were followed by translations along the y-axis to the corresponding side. In incongruent trials yaw rotations were followed by y-axis translations to the opposite side. The combination of the two factors resulted in 16 motion sets. Every motion set was repeated 12 times per participant. Again, participants' response and reaction times were recorded.
+
+### Experimental procedure
+
+Experimental procedure was similar to the one in Experiment 1. Only the type of motion sets presented was different. In this experiment, 192 motion sets were randomly presented (96 congruent, 96 incongruent).
+
+
+### Data analysis
+
+All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages.
+
+## Results
+
+## Discussion
+
+# Experiment 3
+
+In Experiment 2 motion stimuli were the same as in Experiment 1, simply in a different order. The cue stimuli in Experiment 1 were stronger in terms of intensity compared to the target stimuli. Furthermore, because their order was switched in Experiment 2 without adaption of their intensities, the absence of the strong effect for error rates found in Experiment 1 can easily be explained. However, within the data of Experiment 2, there were two participants whose error rates data suggested that they consistently misinterpreted the direction of congruent cued target stimuli. It was thus hypothesized that the effect would reappear if the intensities of the stimuli in terms of distance to thresholds were in the same ratio as in Experiment 1. For this third experiment the rotation about an earth-vertical axis was chosen at an intensity 3.6 times above the threshold found by Grabherr et al. [@grabherr_vestibular_2008] and the horizontal translation was chosen at an intensity 2.6 times above the threshold found by Lim et al. (in preparation).
+
+## Methods
+
+### Participants
+Twelve new participants were recruited for the third experiment. Two participants had to abort the experiment. The remaining ten participants (four female, mean age 29, range 23-56 years). All participants were right handed according to a German version of the handedness questionnaire by Chapman and Chapman [@chapman_measurement_1987]. None of the participants reported a history of relevant neurological, vestibular or attentional disorders. The study was approved by the ethics committeeof the University of Bern and all participants gave written informed consent prior to the experiment in accordance with the Declaration of Helsinki.
+
+### Motion stimuli
+
+Cue stimuli were rotations about an earth-vertical axis (right/left) with single cycle sinusoidal acceleration and a frequency of 5 Hz ($a(t) = A \sin (2 \pi ft) = A \sin (\frac{2\pi t}T)$). Acceleration amplitude was set to $33 \frac{deg}{s^2}$ ($v_{max} = 2.10 \frac{deg}{s}, \Delta p = 0.021 deg$). Target stimuli consisted of translations in the y-axis (right/left) and the same acceleration profile as the cue stimuli. Acceleration amplitude was set to $0.18 \frac{m}{s^2}$ ($v_{max} = .011 \frac{m}{s}, \Delta p = .0011 m$).
+
+### Experimental design and procedure
+
+Design and experimental procedure were identical to Experiment 2.
+
+
+### Data analysis
+
+All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages
+
+
+## Results
+
+## Discussion
+
+# General Discussion
+
+- ISIs are longer than compared to Crane. At their ISI our effect almost disapears. They argue that more reliable at 1 or 3 sec than 0.5 sec, longer latency? In contrast with our result, but they used different paradigm, weaker stimuli or Maybe not same underlying mechanism? But in Yaw Rotation (Coniglio and Crane, 2014) showed similar effect: with increasing ISI aftereffect became weaker, although they used longer ISI than we did. 
+
+- One possibility: ISI to short and sampling rate of vestibular system is not able to discriminate. BUT: movements are strong and stimulated vestibular organs changes from first to second motion. 
+- also this does not explain why for congruent motion participants chose opposite direction if they would stick to first motion. 
+
+## Future Research
+
+Of special interest: Visuo-vestibular integration. This is integration is highly important to disambiguate self and object motion: Can we find such an aftereffect also for visuo-vestibular integration? Oculus? 
+
+\newpage
+
+# References
+
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
