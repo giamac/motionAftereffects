@@ -1,0 +1,32 @@
+---
+title: "To Do List"
+author: "Gianluca Macauda"
+date: "10 Juli 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Manuscript
+
+## Introduction
+- Structure more or less there
+- Find a way to explain where data came from and why we use them for motion aftereffect
+- 
+
+
+## Methods
+- Write methods for DDM (see Ellis et al., 2017?)
+
+
+## Results
+- Start with nice descriptive figures? 
+- Show proportion right answers for SOA and first Motion for each experiment. Take mean of participants and some deviation. 
+- Show proportion correct answers for 'congruent/incongruent' motion for each SOA. Take mean of participants and some deviation. 
+
+
+# Analysis
+- Drift Diffusion Model: Three different models for SOA = 200 ms and SOA = 600ms separately (1. Drift criterion dir1 while starting point fixed, 2. Starting point influenced by dir1 while drift rate only depending on dir2, 3. Combination of both) with subj factors for drift rate, bias and ndt. Leave bs fixed. 
+- Modelselection LOO
