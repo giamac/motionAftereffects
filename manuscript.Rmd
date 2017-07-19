@@ -29,7 +29,7 @@ wordcount: X
 
 class: man
 lang: english
-figsintext: no
+figsintext: yes
 figurelist: no
 tablelist: no
 lineno: yes
@@ -42,44 +42,159 @@ output: papaja::apa6_pdf
 library("papaja")
 library("rstan")
 library("brms")
+library("tidyverse")
+library("haven")
+library("dplyr")
+
+
+##### LOAD DATA #####
+
+exp1 <- read_sav("SPSS Files Master/Exp 1/SPSS Data Files/final gelabelte Reaktionszeiten 11vp bereinigt, log transormiert.sav")
+
+exp2 <- read_sav("SPSS Files Master/Exp 2/SPSS Data Files/gelabelte Reaktionszeiten 11 vp Exp 2 bereinigt, Log transformiert.sav")
+
+exp3 <- read_sav("SPSS Files Master/Exp 3/SPSS Data Files/gelabelte Reaktionszeiten und Fehlerraten 12 vp Exp 3 bereinigt, Log transformiert.sav")
+
+#### TRANSFORM DATA FOR ANALYSIS ####
+
+## EXPERIMENT 1 ## 
+
+exp1 <- exp1 %>%
+  dplyr::rename(subj = Vp,
+                rt = ReactTimes,
+                response = SubjectAnswer,
+                correct = Richtigkeit,
+                cue = Cue,
+                soa = SOA)
+
+
+exp1 <- exp1 %>% dplyr::mutate(logrt = log(rt),
+                               response = ifelse(response == "R", 1, 0),
+                               correct = ifelse(correct == 1, 1, 0),
+                               dir2 = as.factor(ifelse(response == 1 & correct == 1, "right",
+                                                       ifelse(response == 0 & correct == 0, "right", "left"))),
+                               cue = factor(cue, labels = c("valid", "invalid", "neutral")),
+
+                               dir1 = as.factor(ifelse(cue == "neutral", "forewards",
+                                                       ifelse(dir2 == "right" & cue == "valid", "right",
+                                                              ifelse(dir2 == "left" & cue == "invalid", "right", "left")))),
+                               relevel(cue, ref = "neutral"),
+                               soa = as.factor(soa),
+                               subj = as.factor(subj)) %>%
+  dplyr::select(subj, rt, logrt, response, correct, dir1, dir2, cue, soa)
+
+## EXPERIMENT 2 ## 
+
+exp2 <- exp2 %>%
+  dplyr::rename(subj = VP,
+                rt = ReactTimes,
+                response = SubjectAnswer,
+                correct = Richtigkeit,
+                cue = Cue,
+                soa = SOA)
+
+exp2 <- exp2 %>% dplyr::mutate(logrt = log(rt),
+                               response = ifelse(response == "R", 1, 0),
+                               correct = ifelse(correct == 1, 1, 0),
+                               dir2 = as.factor(ifelse(response == 1 & correct == 1, "right",
+                                                       ifelse(response == 0 & correct == 0, "right", "left"))),
+                               cue = factor(cue, labels = c("valid", "invalid")),
+                               
+                               dir1 = as.factor(ifelse(dir2 == "right" & cue == "valid", "right",
+                                                              ifelse(dir2 == "left" & cue == "invalid", "right", "left"))),
+                               soa = as.factor(soa),
+                               subj = as.factor(subj)) %>%
+  dplyr::select(subj, rt, logrt, response, correct, dir1, dir2, cue, soa)
+
+## EXPERIMENT 3 ## 
+
+exp3 <- exp3 %>%
+  dplyr::rename(subj = VP,
+                rt = ReactTimes,
+                response = SubjectAnswer,
+                correct = Richtigkeit,
+                cue = Cue,
+                soa = SOA)
+
+exp3 <- exp3 %>% dplyr::mutate(logrt = log(rt),
+                               response = ifelse(response == "R", 1, 0),
+                               correct = ifelse(correct == 1, 1, 0),
+                               dir2 = as.factor(ifelse(response == 1 & correct == 1, "right",
+                                                       ifelse(response == 0 & correct == 0, "right", "left"))),
+                               cue = factor(cue, labels = c("valid", "invalid")),
+                               
+                               dir1 = as.factor(ifelse(dir2 == "right" & cue == "valid", "right",
+                                                       ifelse(dir2 == "left" & cue == "invalid", "right", "left"))),
+                               soa = as.factor(soa),
+                               subj = as.factor(subj)) %>%
+  dplyr::select(subj, rt, logrt, response, correct, dir1, dir2, cue, soa)
+
+
+### SOME DESCRIPTIVES ###
+
+# Add Experiment variable 
+exp1$experiment <- 'exp1'
+exp2$experiment <- 'exp2'
+exp3$experiment <- 'exp3'
+
+#Redfinde Subject Variable
+levels(exp1$subj) <- 1:length(unique(exp1$subj))
+levels(exp2$subj) <- length(unique(exp1$subj))+1:length(unique(exp2$subj))
+levels(exp3$subj) <- length(unique(exp2$subj))+length(unique(exp2$subj))+1:length(unique(exp3$subj))
+
+# Put all three experiments into one df.
+exp_all <- rbind(exp1, exp2, exp3)
+exp_all$experiment <- factor(exp_all$experiment)
+
+# Get mean correctness for all experiments
+
+exp_all_correct <- exp_all %>% 
+  group_by(subj, cue, soa, experiment) %>%
+  summarise(meanCorrect = mean(correct))
+
+# Rename Variables for nice figure
+
+levels(exp_all_correct$cue) <- c('congruent', 'incongruent', 'neutral')
+levels(exp_all_correct$soa) <- c('50', '100', '200', '600')
+levels(exp_all_correct$experiment) <- c('Experiment 1', 'Experiment 2', 'Experiment 3')
+
+# Get mean correctness for all experiments
+  
+  exp_all_rt <- exp_all %>% 
+    group_by(subj, cue, soa, experiment, correct) %>%
+    summarise(meanLogRT = mean(log(rt)))
+  
+# Rename Variables for nice figure
+  
+  levels(exp_all_rt$cue) <- c('congruent', 'incongruent', 'neutral')
+  levels(exp_all_rt$soa) <- c('50', '100', '200', '600')
+  levels(exp_all_rt$experiment) <- c('Experiment 1', 'Experiment 2', 'Experiment 3')
+  exp_all_rt$correct <- factor(exp_all_rt$correct)
+  levels(exp_all_rt$correct) <- c('Wrong', 'Correct')
 ```
 
+# Abstract 
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
 # Introduction
+The malleable nature of human perception is best observed in sensory illusions. One of such illusions is known as motion aftereffect (MAE): Classically, in the MAE a prolonged exposure to moving visual stimulus leads to the temoporarily illusory perception of motion in the other opposite direction of a subsequent static stimulus. Famously described by Adams as the waterfall illusion [@adams_account_1834], the MAE has been extensively studied in the visual modality. Albeit their simplicity, MAEs are a powerful tool to investigate underlying neural and computational mechanisms of, mainly visual, motion perception [@anstis_motion_1998; @cuturi_optic_2014; @konkle_motion_2009]. Dominating explanation models rely on selective adaptation of motion-sensitive neurons, mostly demonstrated in the visual system. In such models, a prolonged exposition to a specific motion leads to a reduced firing rate and responiveness of those neurons. Assuming that distinct populations of neurons code different directions which are constantly compared, a prolonged stimulation with one direction and thus resulting decreased firing rate would result in the perception apparent motion in the opposite direction [@anstis_motion_1998].  
 
-## Motion aftereffects in general and visual
-- Motion aftereffects (MAE) are a multisensory phenomenon in which the visual, auditory, proproceptive or even vestibular (e.g. velocity storage) modality are presented with a moving stimulus and afterwards perceive a static pattern to move in the opptrtosite direction crane 2012 tra-aft[@crane_foreaft_2012]. 
-- In other areas of sensory perception: stimulus causes subsequent similar stimulus to be perceived more neutral [@coniglio_human_2014]
-- "MAE as a form of sensory error correction" (Anstis et al. 1998) 
-- Multisensory aspect could suggest higher level mechanisms common to perception of motion, independent of modality. 
-- Why are aftereffects so important? They are a powerful behavioral tool to study computational mechansims underyling motion processing, especially visual. (See Cuturi)
+However, MAEs are not limited to the visual modality and similar effects have also been observed in the auditory [@bestelmeyer_auditory_2010; @latinus_perceptual_2012; @reinhardt-rutland_spectrally_2001], proprioceptive [@seizova-cajic_proprioceptive_2007] and recently also vestibular modality [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012]. The modality independent nature of the MAE is further highlighted in crossmodal aftereffects. While there are multisensory effects in the visuo-auditory [@berger_auditory_2016; @ehrenstein_cross-modal_1996] and visuo-tactile domain [@konkle_motion_2009], for the present study visuo-vestibular aftereffects are more relevant. 
 
-## Motion aftereffects from visual to optic flow to self motion
-- Visual motion is essential in self motion perception (maybe link to previous project self vs. object motion)
-- In fact, extensive stimulation of retina with visual motion can lead to feeling of self motion (Vection).
-- Report VAE (Brandt, Seno, Wallach, etc.)
+Studies on visuo-vestibular aftereffects make use of a special kind of visual stimulation, i.e. vection. In vection, visual motion stimuli that simulate the retinal stimulation generated body movements elicit the illusory feeling of self motion [@brandt_motion_1974]. In this context it has been shown, that vection also results in vection after effects [@patterson_modeling_2009; @seno_vection_2010]. Additionally, vestibular information seems to modulate the aftereffects induced by vection [@wallach_compensation_1975]. In a seminal study, Cuturi and MacNeilage Thus, it has been investigated whether the visuo-vestibular coupling is able to produce visuo-vestibular MAE [@cuturi_optic_2014] . Taken together, these studies point out that there are aftereffects for self-motion as well, which are found for the visual system alone (vection), the vestibular system alone [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012] and their combination [@cuturi_optic_2014]. Thus, MAEs seem to be a sensory modality independent phenomenon and an explanatory models limited to lower-level visual areas fail to grasp the crossmodal nature of the sensory motion aftereffect.
 
-## Motion aftereffect and vestibular
-- Vection -> vestibular component. 
-- Velocity storage: Perceptive aftereffects after extensive yaw rotation (Hess & Angelaki, 1997, Bertolini, 2011), but not in roll (Bertolini 2008) and not with isolated linear motion (Hess and Angelaki 1997). Velocity storage: percistence of initial perception (Bertolini 2011), However, such a VSM model did not predict data in yaw rotation after effects experiment (Coniglio and Crane, 2014)
-- Why interesting for vestibular modality?: Vestibular organs are essential in tracking position of the self and thus highly involved in perception of self motion. 
-- Given multimodality of motion aftereffects it has been investigated whether such MAE can be found in vestibular modality as well. 
-- In Vestibular Modality: "Gilingham illusion": Pilots tend to counter previous roll motion with a motion in the same direction: False perception of subsequent roll in the opposite direction. Type something. This has been investigated in more detail. After effects have been found for translations (Crane, 2012), targeting the otoliths, as well as for roll rotation (Crane, 2012) and yaw rotation (Coniglio and Crane, 2014) targeting the semicircular canals using psychophysics techniques  
-- Studies by Crane. 
+For the vestibular system, possible MAEs are highly interesting and important as the vestibular organs track the position of the self relative to space and are thus highly involved in the perception of self motion. Anecdotal evidence for such vestibular MAEs are found in the 'Gillingham illusion' [@ercoline_post-roll_2000], in which pilots tend to counter previous roll motions with a roll motion in the same direction. Driven by this phenomenon, Crane and colleagues found such aftereffects for fore-aft translation [@crane_foreaft_2012], roll [@crane_roll_2012] and yaw rotation [@coniglio_human_2014]. This also highlights that vestibular aftereffects can be evoked in the semicircular canals as well as in the otoliths, giving further evidence for the crossmodal nature of motion aftereffects. 
 
-## motion aftereffect and multimodality (visuo-vestibular)
-- However, in daily life vestibular and visual motion are hardly processed isolated but combined at very early stage. 
-- Thus, it has been investigated whether the visuo-vestibular coupling is able to produce visuo-vestibular MAE (Cuturi). 
-- MAE has been shown for other multimodal combinantions, though with mixed results (Ehrsson, Klonke)
-- In the field of visuo-vestibular integration there have been mixed results as well. Cuturi could show visuo-vestibular aftereffects, while Crane (2013) could not.
-- However, the vestibular system is not unimodal but relies on two organs that code rotation (canals) and translation (otoliths), which are integrated at a very early stage. 
-- Vestibular perception investigated separated (Grabherr, etc.), but with few exceptions [@crane_perception_2016] as usually the stimulation of otoliths and canals are combined. In such experiments, canals' information appears to dominate the overall perception [@crane_perception_2016]
-- Thus, we wanted to test, whether such MAE also transfer from rotation to translation and vice versa based on data from an experiment that was originally planned as a posner paradigm in the vestibular modality. 
+Taken together, these findings contribute to the idea that there is a centre for self-motion perception that integrates information from different modalities [@seno_vection_2010]. However, in the vestibular system an important distinction has to be made between the perception of rotation, which is coded in the semicircular canals, and the perception of translation, which is coded in the otoliths, although their signals are combined at an early processing stage [@crane_perception_2016]. Thus, humans percept of selfmotion is multisensory even within the vestibular system. In every-day life those two signals are rarely perceived alone, which makes crossmodal aftereffects within the vestibular system more interesting. 
 
-## Decision making process
-- Moreover, we explore the decision making process of the perceptual decisions in more detail with the help of a Drift Diffusion Model that allows to estimate different parameters involved in the process and thus to describe the perception (Merfeld et al.) 
+In the present study, we set out to explore this idea even more with data from three experiments that tried to shift attention with natural vestibular stimulation consisting of a prior yaw rotation or inertial translation to facilitate the discrimination of the direction of a subsequent congruent or incongruent yaw rotation or inertial translation. Thus, in experiment one a inertial translation was always followed by a yaw rotation in the same or opposite direction, and in experiment two and three a yaw rotation was followed by a inertial translation in the same or opposite direction. Participants' task was always to indicate the perceived direction of the second motion as fast as possible. Thus, the three experiments investigate whether there is a crossmodal aftereffect within the vestibular system and whether it is unilateral.  
 
-## What are we going to do
-- Here, we study how on vestibular modality influences the other in a subsequent trial with short ISI
+The structure of the three experiments with the discrimination tasks is ideal to study the perceptual decision making process. As far as we know, the decision making process has never been investigated more closely in vestibular motion aftereffects. However, a joint analysis of response and response time would provide more detailed information about the dynamics of the underlying process. A commonly used model for a joint analysis is the Drift Diffusion Model (DDM) [@ratcliff_diffusion_2008]. In the DDM it is assumed that the decision making process relies on the acculumation of noisy sensory evidence over time. A response is given when a threshold for one of the two possibilities is reached. Several parameters describe the decision making process: The drift rate stands for the speed of evidence accumulation for one of the two response options, the boundary separation parameter serves as the threshold for the needed evidence to make response, the non deicision time parameter covers the portion within a response not involved in the deicision making process (e.g. motor execution) and the starting point indicates a point within the boundary from which evidence accumulation starts. Other studies within the field of perceptual decision making [@ellis_vestibular_2017; @wiech_influence_2014] used DDM to disentagle influence of prior information on parameters of the decision making process. From another point of view, in the MAE a first movement introduces prior information which influences the evaluation of the second motion. A DDM allows us to investigate altered sensory processing and a perceptual decision-making bias separately. So far MAE or TAE did not consider those two different biases. 
+
 
 # Experiment 1
 
@@ -104,7 +219,10 @@ Participants were seated upright in a car seat with a five-point harness which w
 
 ### Data analysis
 
-All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages
+All analyses and figures were computed in R [@R-base] using the ggplot2 [@R-ggplot2], brms [@R-brms] and rstan [@R-rstan] packages. 
+To describe data from experiment 1 in more detail, a Bayesian multilevel logistic regression with treatment coded factors Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was calculated. For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors accuracy (correct, wrong), Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Priors were set to default in brms.
+
+Several Drift Diffusion Models implented in brms were used to fit the parameters of interest. A drift diffusion model "simulates" a decision making process with the following parameters: drift rate, boundary separation, starting point and non-decision time.  The upper boundary was coded as decision for 'right motion' while the lower boundary was a 'left motion'. Accuracy was not inlcuded in the models but can be infered from the beta parameters.  
 
 ## Results
 
@@ -138,6 +256,51 @@ Experimental procedure was similar to the one in Experiment 1. Only the type of 
 All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages.
 
 ## Results
+```{r figDescriptiveCorrect, fig.cap='The means for all conditions and their accuracy'}
+exp_all_correct %>%
+  ggplot(aes(x = soa, y = meanCorrect, shape = cue, color = cue)) + 
+  geom_hline(yintercept = .5, linetype = 'dashed') +
+  stat_summary(fun.y = mean, geom = 'point') + 
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
+  #geom_boxplot() +
+  coord_cartesian(ylim = c(0,1), expand = 0) + 
+  scale_y_continuous(limits = c(0,1)) + 
+  labs(x = 'Inter-Stimulus-Intervall', y = 'Accuracy', 
+       title = 'Accuracy over all Conditions', 
+       color = 'Motion Congruence', 
+       shape = 'Motion Congruence') + 
+  ylab('Accuracy') + 
+  xlab('Inter-Stimulus-Intervall') +
+  facet_grid(~experiment) +
+  theme_bw(base_size = 12) +
+  theme(plot.title = element_text(size = 12, face="bold", hjust = 0.5), 
+        axis.title = element_text(size = 12, face = 'bold'), 
+        legend.title = element_text(size = 12, face = 'bold'), 
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+ 
+```{r figDescriptiveRT}         
+na.omit(exp_all_rt) %>%
+    ggplot(aes(x = soa, y = meanLogRT, shape = cue, color = cue, linetype = cue)) + 
+    #stat_summary(fun.y = mean, geom = 'point') + 
+    #stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
+    geom_boxplot() +
+    labs(x = 'Inter-Stimulus-Intervall', y = 'Accuracy', 
+         title = 'Reaction Times', 
+         color = 'Motion Congruence', 
+         shape = 'Motion Congruence',
+         linetype = 'Motion Congruence') + 
+    ylab('Mean Log Reaction Time') + 
+    xlab('Inter-Stimulus-Intervall') +
+    facet_grid(experiment ~ correct) +
+    theme_bw(base_size = 12) +
+    theme(plot.title = element_text(size = 12, face="bold", hjust = 0.5), 
+          axis.title = element_text(size = 12, face = 'bold'), 
+          legend.title = element_text(size = 12, face = 'bold'), 
+          panel.grid.minor = element_blank(),
+          panel.grid.major.x = element_blank())
+```
 
 ## Discussion
 
@@ -172,10 +335,15 @@ All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@
 
 - ISIs are longer than compared to Crane. At their ISI our effect almost disapears. They argue that more reliable at 1 or 3 sec than 0.5 sec, longer latency? In contrast with our result, but they used different paradigm, weaker stimuli or Maybe not same underlying mechanism? But in Yaw Rotation (Coniglio and Crane, 2014) showed similar effect: with increasing ISI aftereffect became weaker, although they used longer ISI than we did. 
 
+- In the visual modality it is usually shown after several seconds of stimulation but has also been shown for very short stimulation of 320ms (kanai verstraten 2005)
 - One possibility: ISI to short and sampling rate of vestibular system is not able to discriminate. BUT: movements are strong and stimulated vestibular organs changes from first to second motion. 
 - also this does not explain why for congruent motion participants chose opposite direction if they would stick to first motion. 
+- Extra proprioceptive input cannot be exluded especially given the strong nature of the motions (Seizova-Cajic, 2007)
 
+However, self-motion perception is more complex, and other systems such as the proprioception are also involved. Thus, the visuo-tactile motion aftereffect could provide further evidence for such a higher level centre for self motion.
 ## Future Research
+
+Given the original nature of the experimental idea, the designs differs quite a lot to other experiments in this domain. They mostly made use of methods from psychophysics with adapte test stimuli, while in the present experiment constant motion stimuli were used. 
 
 Of special interest: Visuo-vestibular integration. This is integration is highly important to disambiguate self and object motion: Can we find such an aftereffect also for visuo-vestibular integration? Oculus? 
 
