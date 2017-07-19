@@ -16,7 +16,11 @@ affiliation:
     institution: Konstanz Business School
 
 abstract: |
-  Enter abstract here (note the indentation, if you start a new paragraph).
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
+
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
 author_note: |
   Complete departmental affiliations for each author (note the indentation, if you start a new paragraph).
@@ -172,20 +176,12 @@ levels(exp_all_correct$experiment) <- c('Experiment 1', 'Experiment 2', 'Experim
   exp_all_rt$correct <- factor(exp_all_rt$correct)
   levels(exp_all_rt$correct) <- c('Wrong', 'Correct')
 ```
-
-# Abstract 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
 # Introduction
-The malleable nature of human perception is best observed in sensory illusions. One of such illusions is known as motion aftereffect (MAE): Classically, in the MAE a prolonged exposure to moving visual stimulus leads to the temoporarily illusory perception of motion in the other opposite direction of a subsequent static stimulus. Famously described by Adams as the waterfall illusion [@adams_account_1834], the MAE has been extensively studied in the visual modality. Albeit their simplicity, MAEs are a powerful tool to investigate underlying neural and computational mechanisms of, mainly visual, motion perception [@anstis_motion_1998; @cuturi_optic_2014; @konkle_motion_2009]. Dominating explanation models rely on selective adaptation of motion-sensitive neurons, mostly demonstrated in the visual system. In such models, a prolonged exposition to a specific motion leads to a reduced firing rate and responiveness of those neurons. Assuming that distinct populations of neurons code different directions which are constantly compared, a prolonged stimulation with one direction and thus resulting decreased firing rate would result in the perception apparent motion in the opposite direction [@anstis_motion_1998].  
+The malleable nature of human perception is best observed in sensory illusions. One of such illusions is known as motion aftereffect (MAE): Classically, in the MAE a prolonged exposure to moving visual stimulus leads to the temoporarily illusory perception of motion in the other opposite direction of a subsequent static stimulus. Famously described by Adams as the waterfall illusion [@adams_account_1834], since then the MAE has become an extremely interesting paradigm in vision science. Albeit their simplicity, MAEs are a powerful tool to investigate underlying neural and computational mechanisms of, mainly visual, motion perception [@anstis_motion_1998; @cuturi_optic_2014; @konkle_motion_2009]. There, the dominating explanation models rely on selective adaptation of motion-sensitive visual neurons. In such models, a prolonged exposition to a specific motion leads to a reduced firing rate and responiveness of those neurons. Assuming that distinct populations of neurons code different directions which are constantly compared, a prolonged stimulation with one direction would result in a decreased firing rate and thus in the perception of apparent motion in the opposite direction [@anstis_motion_1998].  
 
-However, MAEs are not limited to the visual modality and similar effects have also been observed in the auditory [@bestelmeyer_auditory_2010; @latinus_perceptual_2012; @reinhardt-rutland_spectrally_2001], proprioceptive [@seizova-cajic_proprioceptive_2007] and recently also vestibular modality [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012]. The modality independent nature of the MAE is further highlighted in crossmodal aftereffects. While there are multisensory effects in the visuo-auditory [@berger_auditory_2016; @ehrenstein_cross-modal_1996] and visuo-tactile domain [@konkle_motion_2009], for the present study visuo-vestibular aftereffects are more relevant. 
+However, MAEs are not limited to the visual modality and similar effects have also been observed in the auditory [@bestelmeyer_auditory_2010; @latinus_perceptual_2012; @reinhardt-rutland_spectrally_2001], proprioceptive [@seizova-cajic_proprioceptive_2007] and recently also vestibular modality [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012]. The modality independent nature of the MAE is further highlighted in crossmodal aftereffects. While there are multisensory effects in the visuo-auditory [@berger_auditory_2016; @ehrenstein_cross-modal_1996] and visuo-tactile domain [@konkle_motion_2009], for the present study visuo-vestibular aftereffects are more relevant.
 
-Studies on visuo-vestibular aftereffects make use of a special kind of visual stimulation, i.e. vection. In vection, visual motion stimuli that simulate the retinal stimulation generated body movements elicit the illusory feeling of self motion [@brandt_motion_1974]. In this context it has been shown, that vection also results in vection after effects [@patterson_modeling_2009; @seno_vection_2010]. Additionally, vestibular information seems to modulate the aftereffects induced by vection [@wallach_compensation_1975]. In a seminal study, Cuturi and MacNeilage Thus, it has been investigated whether the visuo-vestibular coupling is able to produce visuo-vestibular MAE [@cuturi_optic_2014] . Taken together, these studies point out that there are aftereffects for self-motion as well, which are found for the visual system alone (vection), the vestibular system alone [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012] and their combination [@cuturi_optic_2014]. Thus, MAEs seem to be a sensory modality independent phenomenon and an explanatory models limited to lower-level visual areas fail to grasp the crossmodal nature of the sensory motion aftereffect.
+Studies on visuo-vestibular aftereffects make use of a special kind of visual stimulation, i.e. vection. In vection, visual motion stimuli elicits the illusory feeling of self motion [@brandt_motion_1974]. In this context it has been shown, that vection results in vection after effects [@patterson_modeling_2009; @seno_vection_2010]. Additionally, vestibular information seems to modulate the aftereffects induced by vection [@wallach_compensation_1975]. In their seminal study, Cuturi and MacNeilage [@cuturi_optic_2014] observed that that sustained optic flow induced aftereffects in a subsequent vestibular motion detection task and thus demonstrated crossmodal MAE between the visual and vestibular modality that may rely on different neurophysiological mechanisms than the visual MAE. Taken together, these studies point out that aftereffects are not limited to visual motion in general but also specific for self-motion, which are found in the visual system alone in vection paradigms, in the vestibular system alone [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012] and in the combination of both [@cuturi_optic_2014]. Thus, MAEs seem to be a sensory modality independent phenomenon and an explanatory models limited to lower-level visual areas fail to grasp the crossmodal nature of the sensory motion aftereffect.
 
 For the vestibular system, possible MAEs are highly interesting and important as the vestibular organs track the position of the self relative to space and are thus highly involved in the perception of self motion. Anecdotal evidence for such vestibular MAEs are found in the 'Gillingham illusion' [@ercoline_post-roll_2000], in which pilots tend to counter previous roll motions with a roll motion in the same direction. Driven by this phenomenon, Crane and colleagues found such aftereffects for fore-aft translation [@crane_foreaft_2012], roll [@crane_roll_2012] and yaw rotation [@coniglio_human_2014]. This also highlights that vestibular aftereffects can be evoked in the semicircular canals as well as in the otoliths, giving further evidence for the crossmodal nature of motion aftereffects. 
 
@@ -218,11 +214,61 @@ Participants were seated upright in a car seat with a five-point harness which w
 ### Data analysis
 
 All analyses and figures were computed in R [@R-base] using the ggplot2 [@R-ggplot2], brms [@R-brms] and rstan [@R-rstan] packages. 
-To describe data from experiment 1 in more detail, a Bayesian multilevel logistic regression with treatment coded factors Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was calculated. For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors accuracy (correct, wrong), Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Priors were set to default in brms.
 
 Several Drift Diffusion Models implented in brms were used to fit the parameters of interest. A drift diffusion model "simulates" a decision making process with the following parameters: drift rate, boundary separation, starting point and non-decision time.  The upper boundary was coded as decision for 'right motion' while the lower boundary was a 'left motion'. Accuracy was not inlcuded in the models but can be infered from the beta parameters.  
 
 ## Results
+
+```{r figDescriptiveCorrect, fig.cap='The means for all conditions and their accuracy',  echo=FALSE, cache = FALSE, warning=FALSE}
+exp_all_correct %>%
+  ggplot(aes(x = soa, y = meanCorrect, shape = cue, color = cue)) + 
+  geom_hline(yintercept = .5, linetype = 'dashed') +
+  stat_summary(fun.y = mean, geom = 'point') + 
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
+  #geom_boxplot() +
+  coord_cartesian(ylim = c(0,1), expand = 0) + 
+  scale_y_continuous(limits = c(0,1)) + 
+  labs(x = 'Inter-Stimulus-Intervall', y = 'Accuracy', 
+       title = 'Accuracy over all Conditions', 
+       color = 'Motion Congruence', 
+       shape = 'Motion Congruence') + 
+  ylab('Accuracy') + 
+  xlab('Inter-Stimulus-Intervall') +
+  facet_grid(~experiment) +
+  theme_bw(base_size = 12) +
+  theme(plot.title = element_text(size = 12, face="bold", hjust = 0.5), 
+        axis.title = element_text(size = 12, face = 'bold'), 
+        legend.title = element_text(size = 12, face = 'bold'), 
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+ 
+```{r figDescriptiveRT, echo=FALSE,  cache = FALSE, warning=FALSE}         
+na.omit(exp_all_rt) %>%
+    ggplot(aes(x = soa, y = meanLogRT, shape = cue, color = cue, linetype = cue)) + 
+    #stat_summary(fun.y = mean, geom = 'point') + 
+    #stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
+    geom_boxplot() +
+    labs(x = 'Inter-Stimulus-Intervall', y = 'Accuracy', 
+         title = 'Reaction Times', 
+         color = 'Motion Congruence', 
+         shape = 'Motion Congruence',
+         linetype = 'Motion Congruence') + 
+    ylab('Mean Log Reaction Time') + 
+    xlab('Inter-Stimulus-Intervall') +
+    facet_grid(experiment ~ correct) +
+    theme_bw(base_size = 12) +
+    theme(plot.title = element_text(size = 12, face="bold", hjust = 0.5), 
+          axis.title = element_text(size = 12, face = 'bold'), 
+          legend.title = element_text(size = 12, face = 'bold'), 
+          panel.grid.minor = element_blank(),
+          panel.grid.major.x = element_blank())
+```
+
+### Accuracy and Response Times
+In Fig 1 (Experiment 1) it is visible that the motion discrimination performance is below chance when the prior stimulus was in the same direction, e.g. a left translation follwed by a counter-clockwise yaw rotation. On the other hand, direction discrimination performance is above chance level when a yaw rotation is preceeded by an incongruent or fore-aft motion. Overall, the response patterns indicate MAEs, except for ISIs of 600ms. Moreover, correct response times are faster for incongruent trials (left translation followed by clockwise rotation or right translation followed by counter-clockwise rotation) than for congruent trials (left translation followed by counter-clockwise rotation or right translation followed by counter-clockwise rotation). For incorrect response times the opposite pattern is found. A more detailed analysis for accuracy and reaction times can be found in the supplementary materials. 
+
+### Drift Diffusion Models
 
 ## Discussion
 
@@ -254,51 +300,12 @@ Experimental procedure was similar to the one in Experiment 1. Only the type of 
 All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages.
 
 ## Results
-```{r figDescriptiveCorrect, fig.cap='The means for all conditions and their accuracy'}
-exp_all_correct %>%
-  ggplot(aes(x = soa, y = meanCorrect, shape = cue, color = cue)) + 
-  geom_hline(yintercept = .5, linetype = 'dashed') +
-  stat_summary(fun.y = mean, geom = 'point') + 
-  stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
-  #geom_boxplot() +
-  coord_cartesian(ylim = c(0,1), expand = 0) + 
-  scale_y_continuous(limits = c(0,1)) + 
-  labs(x = 'Inter-Stimulus-Intervall', y = 'Accuracy', 
-       title = 'Accuracy over all Conditions', 
-       color = 'Motion Congruence', 
-       shape = 'Motion Congruence') + 
-  ylab('Accuracy') + 
-  xlab('Inter-Stimulus-Intervall') +
-  facet_grid(~experiment) +
-  theme_bw(base_size = 12) +
-  theme(plot.title = element_text(size = 12, face="bold", hjust = 0.5), 
-        axis.title = element_text(size = 12, face = 'bold'), 
-        legend.title = element_text(size = 12, face = 'bold'), 
-        panel.grid.minor = element_blank(),
-        panel.grid.major.x = element_blank())
-```
- 
-```{r figDescriptiveRT}         
-na.omit(exp_all_rt) %>%
-    ggplot(aes(x = soa, y = meanLogRT, shape = cue, color = cue, linetype = cue)) + 
-    #stat_summary(fun.y = mean, geom = 'point') + 
-    #stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
-    geom_boxplot() +
-    labs(x = 'Inter-Stimulus-Intervall', y = 'Accuracy', 
-         title = 'Reaction Times', 
-         color = 'Motion Congruence', 
-         shape = 'Motion Congruence',
-         linetype = 'Motion Congruence') + 
-    ylab('Mean Log Reaction Time') + 
-    xlab('Inter-Stimulus-Intervall') +
-    facet_grid(experiment ~ correct) +
-    theme_bw(base_size = 12) +
-    theme(plot.title = element_text(size = 12, face="bold", hjust = 0.5), 
-          axis.title = element_text(size = 12, face = 'bold'), 
-          legend.title = element_text(size = 12, face = 'bold'), 
-          panel.grid.minor = element_blank(),
-          panel.grid.major.x = element_blank())
-```
+
+### Accuracy and Response Times
+In Fig 1 (Experiment 2) it is visible that the motion discrimination performance is around or even above chance when the prior stimulus was congruent with the motion, e.g. a counter-clockwise yaw rotation followed by a left translation. Direction discrimination performance for the second motion is even better when a yaw rotation is followed by an incongruent inertial translation. In this Experiment there are no clear MAEs. As for experiment 1, a more detailed analysis for accuracy and reaction times can be found in the supplementary materials. 
+
+### Drift Diffusion Models
+
 
 ## Discussion
 
@@ -327,6 +334,10 @@ All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@
 
 ## Results
 
+### Accuracy and Response Times
+In Fig 1 (Experiment 3) it is again visible that the motion discrimination performance is below chance when the prior stimulus was in the same direction, e.g. a left translation follwed by a counter-clockwise yaw rotation. Direction discrimination performance is above chance level when a yaw rotation is preceeded by an incongruent or fore-aft motion. As in experiment 1, the response patterns indicate MAEs, except for ISIs of 600ms. Again, correct response times are faster for incongruent trials (left translation followed by clockwise rotation or right translation followed by counter-clockwise rotation) than for congruent trials (left translation followed by counter-clockwise rotation or right translation followed by counter-clockwise rotation), while the opposite pattern is found for incorrect response times. A more detailed analysis for accuracy and reaction times can be found in the supplementary materials. 
+
+
 ## Discussion
 
 # General Discussion
@@ -345,9 +356,19 @@ Given the original nature of the experimental idea, the designs differs quite a 
 
 Of special interest: Visuo-vestibular integration. This is integration is highly important to disambiguate self and object motion: Can we find such an aftereffect also for visuo-vestibular integration? Oculus? 
 
+# Supplementary Methods and Results
+
+## Experiment 1
+To describe data from experiment 1 in more detail, a Bayesian multilevel logistic regression for accuracy with treatment coded factors Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was calculated. For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors accuracy (correct, wrong), Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Priors were set to default in brms.
+
+## Experiment 3
+To describe data from experiment 2 and 3 in more detail, for each experiment a Bayesian multilevel logistic regression for accuracy with treatment coded factors Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms) was calculated. For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors accuracy (correct, wrong), Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Priors were set to default in brms.
+
 \newpage
 
 # References
+
+
 
 
 \setlength{\parindent}{-0.5in}
