@@ -2,30 +2,27 @@
 title: "Reversed motion direction illusion: influence of (spatially congruent) subsequent own-body motion on self-motion perception"
 shorttitle: "Reversed motion direction illusion"
 author:
-  - name: First Author
+  - name: Roman B. Di Francesco
     affiliation: 1
+  - name: Andrew W. Ellis
+    affiliation: 1
+  - name: Luzia Grabherr  
+    affiliation: 1
+  - name: Gianluca Macauda
     corresponding: yes    # Define only one corresponding author
-    address: Postal address
-    email: my@email.com
-  - name: Ernst-August Doelle
-    affiliation: "1,2"
+    address: Departement of Psychology, University of Bern, Fabrikstrasse 8, 3012 Bern, Switzerland
+    email: gianluca.macauda@psy.unibe.ch
+  - name: Fred W. Mast
+    affiliation: 1
 affiliation:
   - id: 1
-    institution: Wilhelm-Wundt-Univerdddsity
-  - id: 2
-    institution: Konstanz Business School
-
+    institution: Departement of Psychology, University of Bern
+    
 abstract: |
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
-  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
 
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-author_note: |
-  Complete departmental affiliations for each author (note the indentation, if you start a new paragraph).
-
-  Enter author note here.
 
 keywords: "keywords"
 
@@ -175,52 +172,8 @@ levels(exp_all_correct$experiment) <- c('Experiment 1', 'Experiment 2', 'Experim
   levels(exp_all_rt$experiment) <- c('Experiment 1', 'Experiment 2', 'Experiment 3')
   exp_all_rt$correct <- factor(exp_all_rt$correct)
   levels(exp_all_rt$correct) <- c('Wrong', 'Correct')
-```
-# Introduction
-The malleable nature of human perception is best observed in sensory illusions. One of such illusions is known as motion aftereffect (MAE): Classically, in the MAE a prolonged exposure to moving visual stimulus leads to the temoporarily illusory perception of motion in the other opposite direction of a subsequent static stimulus. Famously described by Adams as the waterfall illusion [@adams_account_1834], since then the MAE has become an extremely interesting paradigm in vision science. Albeit their simplicity, MAEs are a powerful tool to investigate underlying neural and computational mechanisms of, mainly visual, motion perception [@anstis_motion_1998; @cuturi_optic_2014; @konkle_motion_2009]. There, the dominating explanation models rely on selective adaptation of motion-sensitive visual neurons. In such models, a prolonged exposition to a specific motion leads to a reduced firing rate and responiveness of those neurons. Assuming that distinct populations of neurons code different directions which are constantly compared, a prolonged stimulation with one direction would result in a decreased firing rate and thus in the perception of apparent motion in the opposite direction [@anstis_motion_1998].  
-
-However, MAEs are not limited to the visual modality and similar effects have also been observed in the auditory [@bestelmeyer_auditory_2010; @latinus_perceptual_2012; @reinhardt-rutland_spectrally_2001], proprioceptive [@seizova-cajic_proprioceptive_2007] and recently also vestibular modality [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012]. The modality independent nature of the MAE is further highlighted in crossmodal aftereffects. While there are multisensory effects in the visuo-auditory [@berger_auditory_2016; @ehrenstein_cross-modal_1996] and visuo-tactile domain [@konkle_motion_2009], for the present study visuo-vestibular aftereffects are more relevant.
-
-Studies on visuo-vestibular aftereffects make use of a special kind of visual stimulation, i.e. vection. In vection, visual motion stimuli elicits the illusory feeling of self motion [@brandt_motion_1974]. In this context it has been shown, that vection results in vection after effects [@patterson_modeling_2009; @seno_vection_2010]. Additionally, vestibular information seems to modulate the aftereffects induced by vection [@wallach_compensation_1975]. In their seminal study, Cuturi and MacNeilage [@cuturi_optic_2014] observed that that sustained optic flow induced aftereffects in a subsequent vestibular motion detection task and thus demonstrated crossmodal MAE between the visual and vestibular modality that may rely on different neurophysiological mechanisms than the visual MAE. Taken together, these studies point out that aftereffects are not limited to visual motion in general but also specific for self-motion, which are found in the visual system alone in vection paradigms, in the vestibular system alone [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012] and in the combination of both [@cuturi_optic_2014]. Thus, MAEs seem to be a sensory modality independent phenomenon and an explanatory models limited to lower-level visual areas fail to grasp the crossmodal nature of the sensory motion aftereffect.
-
-For the vestibular system, possible MAEs are highly interesting and important as the vestibular organs track the position of the self relative to space and are thus highly involved in the perception of self motion. Anecdotal evidence for such vestibular MAEs are found in the 'Gillingham illusion' [@ercoline_post-roll_2000], in which pilots tend to counter previous roll motions with a roll motion in the same direction. Driven by this phenomenon, Crane and colleagues found such aftereffects for fore-aft translation [@crane_foreaft_2012], roll [@crane_roll_2012] and yaw rotation [@coniglio_human_2014]. This also highlights that vestibular aftereffects can be evoked in the semicircular canals as well as in the otoliths, giving further evidence for the crossmodal nature of motion aftereffects. 
-
-Taken together, these findings contribute to the idea that there is a centre for self-motion perception that integrates information from different modalities [@seno_vection_2010]. However, in the vestibular system an important distinction has to be made between the perception of rotation, which is coded in the semicircular canals, and the perception of translation, which is coded in the otoliths, although their signals are combined at an early processing stage [@crane_perception_2016]. Thus, humans percept of selfmotion is multisensory even within the vestibular system. In every-day life those two signals are rarely perceived alone, which makes crossmodal aftereffects within the vestibular system more interesting. 
-
-In the present study, we set out to explore this idea even more with data from three experiments that tried to shift attention with natural vestibular stimulation consisting of a prior yaw rotation or inertial translation to facilitate the discrimination of the direction of a subsequent congruent or incongruent yaw rotation or inertial translation. Thus, in experiment one a inertial translation was always followed by a yaw rotation in the same or opposite direction, and in experiment two and three a yaw rotation was followed by a inertial translation in the same or opposite direction. Participants' task was always to indicate the perceived direction of the second motion as fast as possible. Thus, the three experiments investigate whether there is a crossmodal aftereffect within the vestibular system and whether it is unilateral.  
-
-The structure of the three experiments with the discrimination tasks is ideal to study the perceptual decision making process. As far as we know, the decision making process has never been investigated more closely in vestibular motion aftereffects. However, a joint analysis of response and response time would provide more detailed information about the dynamics of the underlying process. A commonly used model for a joint analysis is the Drift Diffusion Model (DDM) [@ratcliff_diffusion_2008]. In the DDM it is assumed that the decision making process relies on the acculumation of noisy sensory evidence over time. A response is given when a threshold for one of the two possibilities is reached. Several parameters describe the decision making process: The drift rate stands for the speed of evidence accumulation for one of the two response options, the boundary separation parameter serves as the threshold for the needed evidence to make response, the non deicision time parameter covers the portion within a response not involved in the deicision making process (e.g. motor execution) and the starting point indicates a point within the boundary from which evidence accumulation starts. Other studies within the field of perceptual decision making [@ellis_vestibular_2017; @wiech_influence_2014] used DDM to disentagle influence of prior information on different parameters of the decision making process. Applied to MAEs, it appears that a first motion stimulation (in our case vestibular) influences the judgment of the subsequent motion discrimantion task by introducing a bias. However, it remians to be seen whether such a bias for the opposite direction shifts the starting point to the opposite direction, which would mean that a first motion alters the perceptual decision making, or whether the first motion affects the drift rate and thus changes the acculumation processes, which would be indicative for altered sensory processing [@wiech_influence_2014]. 
-
-# Experiment 1
-
-## Methods
-
-### Participants
-
-Twelve healthy participants participated in the first experiment (four female, mean age 27, range 24-30 years). All participants were right handed according to a Gemran version of the handedness questionnaire by Chapman and Chapman [@chapman_measurement_1987]. One of the participants received a course credit for participation. None of the participants reported a history of relevant neurological, vestibular or attentional disorders. The study was approved by the ethics committeeof the University of Bern and all participants gave written informed consent prior to the experiment in accordance with the Declaration of Helsinki.
-
-### Motion stimuli
-
-A six degree of freedom motion base (6DOF2000E, Moog Inc., East Aurora, NY) and in-house software were used to generate the motion stimuli. Cue (antecedent) stimuli consisted of translations with single cycle sinusoidal acceleration and a frequency $f$ of 5 Hz ($a(t) = A\sin(2 \pi ft) = A\sin(\frac{2 \pi t}{T})$, $T = \frac{1}{f}$) along the y-axis (left/right) and the x-axis (forth/back) as used in previous studies (see e.g. Grabherr et al. 2008; Benson et al. 1989; Crane 2012). Acceleration amplitude (A) was set to $0.25 \frac{m}{s^2}$, i.e. a peak velocity of $0.016 \frac{m}{s}$ ($v_{max} = \frac{AT}{\pi}$) and a displacement of 0.0016 m ($\Delta p = \frac{AT^2}{2\pi}$). For the target (subsequent) stimuli the same acceleration profile as for the cue stimuli was used but with yaw rotations about an earth-vertical axis (left/right). The acceleration amplitude was set to $24 \frac{deg}{s^2}$ ($v_{max} = 1.53 \frac{deg}{s}, \Delta p = .153 deg$).
-
-### Experimental design
-
-Within each participant Cue Congruency (three levels: congruent, incongruent and neutral) and interstimulus interval (ISI, four levels: 50 ms, 100 ms, 200 ms and 600 ms) were manipulated. In congruent trials y-axis translations were followed by yaw rotations to the corresponding side. In incongruent trials y-axis translations preceeded yaw rotations to the opposite side. Neutral trials consisted of a translation along the x-axis and a subsequent yaw rotation. The combination of the two factors resulted in 32 motion sets. Every motion set was repeated six times per participant. In-house software based on labVIEW (CITE) was used to record participants' response and reaction times.
-
-### Experimental procedure
-
-Participants were seated upright in a car seat with a five-point harness which was mounted on the motion base. Their head was centered and fixated with a helmet. The experiments were conducted in the dark and participants were blindfolded to prevent the processing of visual cues. White noise was delivered to in-ear headphones at approximately 60 dB to mask sounds from the motion base. Participants were instructed to indicate the perceived direction of the second motion as fast as possible by pressing the corresponding button in either their left or right hand. In case of uncertainty, participants had to make their best guess. The first motion was described as a time varying warning cue, which would indicate the beginning of the second motion but not predict its direction. Practice trials were administered until participants understood the task. Once a participant was comfortable with the task, motion sets were presented in three blocks. The length of the breaks between blocks were determined by participants. In total, 192 trials were randomly presented (48 congruent, 48 incongruent, 96 neutral). A trial consisted of a cue stimulus (200 ms), an ISI (50-600 ms), a target stimulus (200 ms), time to respond (max. 2500 ms), return to the origin (1100 ms) and an intertrial interval of about 1000 ms.
-
-### Data analysis
-
-All analyses and figures were computed in R [@R-base] using the ggplot2 [@R-ggplot2], brms [@R-brms] and rstan [@R-rstan] packages. 
-
-Several Drift Diffusion Models implented in brms were used to fit the parameters of interest. A drift diffusion model "simulates" a decision making process with the following parameters: drift rate, boundary separation, starting point and non-decision time.  The upper boundary was coded as decision for 'right motion' while the lower boundary was a 'left motion'. Accuracy was not inlcuded in the models but can be infered from the beta parameters.  
-
-## Results
-
-```{r figDescriptiveCorrect, fig.cap='The means for all conditions and their accuracy',  echo=FALSE, cache = FALSE, warning=FALSE}
-exp_all_correct %>%
+  
+  plot_correct <- exp_all_correct %>%
   ggplot(aes(x = soa, y = meanCorrect, shape = cue, color = cue)) + 
   geom_hline(yintercept = .5, linetype = 'dashed') +
   stat_summary(fun.y = mean, geom = 'point') + 
@@ -241,10 +194,9 @@ exp_all_correct %>%
         legend.title = element_text(size = 12, face = 'bold'), 
         panel.grid.minor = element_blank(),
         panel.grid.major.x = element_blank())
-```
- 
-```{r figDescriptiveRT, echo=FALSE,  cache = FALSE, warning=FALSE}         
-na.omit(exp_all_rt) %>%
+  
+  
+rt_times_plot <- na.omit(exp_all_rt) %>%
     ggplot(aes(x = soa, y = meanLogRT, shape = cue, color = cue, linetype = cue)) + 
     #stat_summary(fun.y = mean, geom = 'point') + 
     #stat_summary(fun.data = mean_cl_normal, geom = "errorbar") + 
@@ -262,19 +214,112 @@ na.omit(exp_all_rt) %>%
           axis.title = element_text(size = 12, face = 'bold'), 
           legend.title = element_text(size = 12, face = 'bold'), 
           panel.grid.minor = element_blank(),
-          panel.grid.major.x = element_blank())
+          panel.grid.major.x = element_blank()) 
+
+load('figures_ddm.Rda')
+```
+# Introduction
+The malleable nature of human perception is best observed in sensory illusions. One of such illusions is known as motion aftereffect (MAE): Classically, in the MAE a prolonged exposure to moving visual stimulus leads to the temoporarily illusory perception of motion in the other opposite direction of a subsequent static stimulus. Famously described by Adams as the waterfall illusion [@adams_account_1834], since then the MAE has become an extremely interesting paradigm in vision science. Albeit their simplicity, MAEs are a powerful tool to investigate underlying neural and computational mechanisms of, mainly visual, motion perception [@anstis_motion_1998; @cuturi_optic_2014; @konkle_motion_2009]. There, the dominating explanation models rely on selective adaptation of motion-sensitive visual neurons. In such models, a prolonged exposition to a specific motion leads to a reduced firing rate and responiveness of those neurons. Assuming that distinct populations of neurons code different directions which are constantly compared, a prolonged stimulation with one direction would result in a decreased firing rate and thus in the perception of apparent motion in the opposite direction [@anstis_motion_1998].  
+
+However, MAEs are not limited to the visual modality and similar effects have also been observed in the auditory [@bestelmeyer_auditory_2010; @latinus_perceptual_2012; @reinhardt-rutland_spectrally_2001], proprioceptive [@seizova-cajic_proprioceptive_2007] and recently also vestibular modality [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012]. The modality independent nature of the MAE is further highlighted in crossmodal aftereffects. While there are multisensory effects in the visuo-auditory [@berger_auditory_2016; @ehrenstein_cross-modal_1996] and visuo-tactile domain [@konkle_motion_2009], for the present study visuo-vestibular aftereffects are more relevant.
+
+Studies on visuo-vestibular aftereffects make use of a special kind of visual stimulation, i.e. vection. In vection, visual motion stimuli elicits the illusory feeling of self motion [@brandt_motion_1974]. In this context it has been shown, that vection results in vection after effects [@patterson_modeling_2009; @seno_vection_2010]. Additionally, vestibular information seems to modulate the aftereffects induced by vection [@wallach_compensation_1975]. In their seminal study, Cuturi and MacNeilage [@cuturi_optic_2014] observed that that sustained optic flow induced aftereffects in a subsequent vestibular motion detection task and thus demonstrated crossmodal MAE between the visual and vestibular modality that may rely on different neurophysiological mechanisms than the visual MAE. Taken together, these studies point out that aftereffects are not limited to visual motion in general but also specific for self-motion, which are found in the visual system alone in vection paradigms, in the vestibular system alone [@coniglio_human_2014; @crane_foreaft_2012; @crane_roll_2012] and in the combination of both [@cuturi_optic_2014]. Thus, MAEs seem to be a sensory modality independent phenomenon and an explanatory models limited to lower-level visual areas fail to grasp the crossmodal nature of the sensory motion aftereffect.
+
+For the vestibular system, possible MAEs are highly interesting and important as the vestibular organs track the position of the self relative to space and are thus highly involved in the perception of self motion. Anecdotal evidence for such vestibular MAEs are found in the 'Gillingham illusion' [@ercoline_post-roll_2000], in which pilots tend to counter previous roll motions with a roll motion in the same direction. Driven by this phenomenon, Crane and colleagues found such aftereffects for fore-aft translation [@crane_foreaft_2012], roll [@crane_roll_2012] and yaw rotation [@coniglio_human_2014]. This also highlights that vestibular aftereffects can be evoked in the semicircular canals as well as in the otoliths, giving further evidence for the crossmodal nature of motion aftereffects. 
+
+Taken together, these findings contribute to the idea that there is a centre for self-motion perception that integrates information from different modalities [@seno_vection_2010]. However, in the vestibular system an important distinction has to be made between the perception of rotation, which is coded in the semicircular canals, and the perception of translation, which is coded in the otoliths, although their signals are combined at an early processing stage [@crane_perception_2016]. Thus, humans percept of selfmotion is multisensory even within the vestibular system. In every-day life those two signals are rarely perceived alone, which makes crossmodal aftereffects within the vestibular system more interesting. 
+
+In the present study, we set out to explore this idea even more with data from three experiments (unpublished data) that tried to shift attention with natural vestibular stimulation consisting of a prior yaw rotation or inertial translation to facilitate the discrimination of the direction of a subsequent congruent or incongruent yaw rotation or inertial translation. Thus, in experiment one a inertial translation was always followed by a yaw rotation in the same or opposite direction, and in experiment two and three a yaw rotation was followed by a inertial translation in the same or opposite direction. Participants' task was always to indicate the perceived direction of the second motion as fast as possible. Thus, the three experiments investigate whether there is a crossmodal aftereffect within the vestibular system and whether it is unilateral.  
+
+The structure of the three experiments with the discrimination tasks is ideal to study the perceptual decision making process. As far as we know, the decision making process has never been investigated more closely in vestibular motion aftereffects. However, a joint analysis of response and response time would provide more detailed information about the dynamics of the underlying process. A commonly used model for a joint analysis is the Drift Diffusion Model (DDM) [@ratcliff_diffusion_2008]. In the DDM it is assumed that the decision making process relies on the acculumation of noisy sensory evidence over time. A response is given when a threshold for one of the two possibilities is reached. Several parameters depict the decision making process: The drift rate describes the speed of evidence accumulation for one of the two response options. The starting point indicates a point within the boundary from which evidence accumulation starts. Parameters of interest for the current study are the drift rate and starting point. Other important parameters of the DDM include the boundary separation parameter, which serves as the threshold for the needed evidence to make decision and the non deicision time parameter that covers the portion within a response not involved in the deicision making process (e.g. motor execution). Other studies within the field of perceptual decision making [@ellis_vestibular_2017; @wiech_influence_2014] used DDM to disentagle influence of prior information on different parameters of the decision making process. Applied to MAEs, a first motion stimulation (in our case vestibular stimulation) influences the judgment of the subsequent motion discrimantion task by introducing a bias. However, it remains to be seen whether such a bias shifts the starting point to the opposite direction, which would mean that a first motion alters the perceptual decision making process, or whether the first motion affects the drift rate and thus changes the acculumation process, which would be indicative for altered sensory processing [@wiech_influence_2014]. A combination of both biases is possible as well (see also a simplified depicition of the DDM in  ```\@ref(fig:ddms)```). 
+
+The goal of this study is twofold: First, we want to replicate the previously found MAE in the vestibular modality. However, here it tested whether a stimulation of the otliths can evoke MAE for the semicircular canals and vice versa. This would further highlight the crossmodal nature of MAEs. Second and based on the MAE, it is investigated whether the introduced bias for the opposite direction is more likely due to changes in sensory processing or a more general cognitive strategy with the help of a joint analysis of response times and responses in a DDM. 
+
+```{r ddms, fig.cap = 'Three possibilites how the first motion could influence the discrimination of the second motion. On the left, the perceptual decision making process would be changed.  The first motion would influence just the starting point. A left motion would shift the starting point towards the decision threshold for a response to the right and vice versa. Here, the drift rate would not be influenced by the first motion. In the middle, altered sensory processing is depicted. The starting point would remain unchanged, the aftereffect would solely be caused by an alteration in the acculumuation process, i.e. a variable drift rate. On the right, the combination of both is presented. The aftereffect would be explained by a shifted starting point as well as a variable drift rate.'}
+
+knitr::include_graphics(path = 'ddm.eps')
+
 ```
 
-### Accuracy and Response Times
-In Fig 1 (Experiment 1) it is visible that the motion discrimination performance is below chance when the prior stimulus was in the same direction, e.g. a left translation follwed by a counter-clockwise yaw rotation. On the other hand, direction discrimination performance is above chance level when a yaw rotation is preceeded by an incongruent or fore-aft motion. Overall, the response patterns indicate MAEs, except for ISIs of 600ms. Moreover, correct response times are faster for incongruent trials (left translation followed by clockwise rotation or right translation followed by counter-clockwise rotation) than for congruent trials (left translation followed by counter-clockwise rotation or right translation followed by counter-clockwise rotation). For incorrect response times the opposite pattern is found. A more detailed analysis for accuracy and reaction times can be found in the supplementary materials. 
+# Experiment 1
+
+Experiment 1 was originally planed as a modification of the Spatial Cueing paradigm by Posner et al. (1980) to examine potential influences of own-body motion stimuli on the perception of subsequent motion stimuli. Similar to Spatial Cueing in the visual system, a cue stimulus was expected to direct covert attention to one side in space.  The spatial cueing effect is usually found for short stimuli with short ISIs (Ruz and Lupianez 2002). Therefore both movements were short (200 ms) and the ISIs ranged from 50 ms to 600 ms.
+
+Participants were first translated in the y-axis (cue) and were then rotated about an earth-vertical axis (target). The first motion was chosen to be stronger compared to the second one to ensure that participants perceive the cue correctly, since this could potentially influence attention. A trial was considered as congruent when both motions had the same spatial direction, e.g. left translations and counter-clockwise rotation. The first motion was chosen to be 3.6 times greater than the intensity of the threshold established in a preliminary study and similar to published data (Valko et al. 2012) and the second motion was chosen to be 2.6 times greater than the intensity of the thresholds reported by Grabherr et al [@grabherr_vestibular_2008]. 
+
+## Methods
+
+### Participants
+
+Twelve healthy participants participated in the first experiment (four female, mean age 27, range 24-30 years). All participants were right handed according to a Gemran version of the handedness questionnaire by Chapman and Chapman [@chapman_measurement_1987]. One of the participants received a course credit for participation. None of the participants reported a history of relevant neurological, vestibular or attentional disorders. The study was approved by the ethics committee of the University of Bern and all participants gave written informed consent prior to the experiment in accordance with the Declaration of Helsinki.
+
+### Motion stimuli
+
+A six degree of freedom motion base (6DOF2000E, Moog Inc., East Aurora, NY) and in-house software were used to generate the motion stimuli. Cue (antecedent) stimuli consisted of translations with single cycle sinusoidal acceleration and a frequency $f$ of 5 Hz ($a(t) = A\sin(2 \pi ft) = A\sin(\frac{2 \pi t}{T})$, $T = \frac{1}{f}$) along the y-axis (left/right) and the x-axis (forth/back) as used in previous studies (see e.g. Grabherr et al. 2008; Benson et al. 1989; Crane 2012). Acceleration amplitude (A) was set to $0.25 \frac{m}{s^2}$, i.e. a peak velocity of $0.016 \frac{m}{s}$ ($v_{max} = \frac{AT}{\pi}$) and a displacement of 0.0016 m ($\Delta p = \frac{AT^2}{2\pi}$). For the target (subsequent) stimuli the same acceleration profile as for the cue stimuli was used but with yaw rotations about an earth-vertical axis (left/right). The acceleration amplitude was set to $24 \frac{deg}{s^2}$ ($v_{max} = 1.53 \frac{deg}{s}, \Delta p = .153 deg$).
+
+### Experimental design
+
+Within each participant Cue Congruency (three levels: congruent, incongruent and neutral) and interstimulus interval (ISI, four levels: 50 ms, 100 ms, 200 ms and 600 ms) were manipulated. In congruent trials y-axis translations were followed by yaw rotations to the corresponding side. In incongruent trials y-axis translations preceeded yaw rotations to the opposite side. Neutral trials consisted of a translation along the x-axis and a subsequent yaw rotation. The combination of the two factors resulted in 32 motion sets. Every motion set was repeated six times per participant. In-house software based on labVIEW (CITE) was used to record participants' response and reaction times.
+
+### Experimental procedure
+
+Participants were seated upright in a car seat with a five-point harness which was mounted on the motion base. Their head was centered and fixated with a helmet. The experiments were conducted in the dark and participants were blindfolded to prevent the processing of visual cues. White noise was delivered to in-ear headphones at approximately 60 dB to mask sounds from the motion base. Participants were instructed to indicate the perceived direction of the second motion as fast as possible by pressing the corresponding button in either their left or right hand. In case of uncertainty, participants had to make their best guess. The first motion was described as a time varying warning cue, which would indicate the beginning of the second motion but not predict its direction. Practice trials were administered until participants understood the task. Once a participant was comfortable with the task, motion sets were presented in three blocks. The length of the breaks between blocks were determined by participants. In total, 192 trials were randomly presented (48 congruent, 48 incongruent, 96 neutral). A trial consisted of a cue stimulus (200 ms), an ISI (50-600 ms), a target stimulus (200 ms), time to respond (max. 2500 ms), return to the origin (1100 ms) and an intertrial interval of about 1000 ms.
+
+### Data analysis
+
+For all experiments analyses and figures were computed in R [@R-base] using the ggplot2 [@R-ggplot2], brms [@R-brms] and rstan [@R-rstan] packages. Analyses and data are accessible on the OpenScienceFramework (OSF) (OSFLINK). WRITE SOMEWHERE SPECIFICS OF HMC, SAMPLES AND CHAINS. 
+
+To describe data from experiment 1 in more detail, participants' accuracies were analyzed with a multilevel Bayesian logistic regression model with factors Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms). 
+<!---To analyze participants' reaction times a multilevel Bayesian regression model with an ex-Gaussian likelihood function and factors Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Only correct trials were included as the underlying mechanism leading to a wrong response might differ. Priors were set to the default implemented in brms.-->
+
+To jointly analyze the participants' response and response times, and to study the bias introduced by the first motion, two different hierarchical Drift Diffusion Models [@vandekerckhove_hierarchical_2011] were calculated in brms [@R-brms]. Neutral conditions were eliminated from the dataset to simplify the statistical models. 
+
+In the first model, for the drift rate fixed effects of the first direction (left/right), the second direction (clockwise or counter-clockwise) were estimated together with the random effects of participants. For the non-decision time and starting point the random effects of particpants were estimated. 
+
+In the second model, for the drift rate fixed effects of the first direction (left/right), the second direction (clockwise or counter-clockwise) were estimated together with the random effects of participants. Moreover, for the starting point the fixed effects of the first motion and ISI along with the random effect of participants was estimated. For the non-decision time the random effects of participants were estimated. 
+
+The better model was selected based on the leave-one-out cross-validiation (LOO) [@vehtari_practical_2017]. 
+
+## Results
+
+```{r figDescriptiveCorrect, fig.cap='The means for all conditions and their accuracy',  echo=FALSE, cache = FALSE, warning=FALSE}
+plot_correct
+```
+ 
+```{r figDescriptiveRT, echo=FALSE,  cache = FALSE, warning=FALSE}         
+rt_times_plot
+```
+
+```{r figure_ddm_driftRate, fig.cap='The means for all conditions and their accuracy',  echo=FALSE, cache = FALSE, warning=FALSE}
+figure_ddm_drift
+```
+
+```{r fig_ddm_starting, fig.cap='The means for all conditions and their accuracy',  echo=FALSE, cache = FALSE, warning=FALSE}
+figure_ddm_start
+```
+
+### Accuracy
+The logistic regression (In Fig accuracy plot Experiment 1) showed that the motion discrimination performance is below chance when the prior stimulus was in the same direction, e.g. a left translation follwed by a counter-clockwise yaw rotation. On the other hand, direction discrimination performance is above chance level when a yaw rotation is preceeded by an incongruent or a neutral fore-aft motion. The discrimination performation did not differ meaningfully between the incongruent and neutral motions, as all 95% CIs for the posterior distribution of the different included zero. Overall, the response patterns indicate MAEs, except for ISIs of 600ms. 
+
+<!--Moreover, correct response times are faster for incongruent trials (left translation followed by clockwise rotation or right translation followed by counter-clockwise rotation) than for congruent trials (left translation followed by counter-clockwise rotation or right translation followed by counter-clockwise rotation). For incorrect response times the opposite pattern is found. A more detailed analysis for accuracy and reaction times can be found in the supplementary materials. -->
 
 ### Drift Diffusion Models
+For the first experiment, the winning model included fixed effects of the first direction (left/right), the second direction (clockwise or counter-clockwise), for the drift rate fixed effects of the first direction (left/right), the second direction (clockwise or counter-clockwise) and the random effects of participants (see figure ddm_exp1). To get an estimate of each condition, no intercept and the triple interaction effect was entered. 
+This model revealed that evidence was accumulated in the direction of the first motion an ISI of 50ms, if the second motion was to the same direction as the first. It appears that evidence is still accumulated for the direction of the first motion when the second motion is to the oppsoite, yet those 95% credible intervals include zero. Moreover, the second motion did not meanigfully alter evidence accumulation (all CI include zero, mit the median around zero)
+For the ISI of 100ms evidence is accumulated for the direction of the first motion, except for the condition of the first motion and second motion to the left, where the 95% CI includes zero. Again, the second motion did not meanigfully alter evidence accumulation (all CI include zero, mit the median around zero).
+For the ISI of 200ms evidence is accumulated for the direction of the first motion, when the second motion is to the other direction. In the congruent conditions, evidence for the first motion direction is accumulated, yet with the 95% CI barely including zero. Here the second motion alters evidence acculumation meaningfully, i.e. it shifted evidence acculumation towards the correct response of the second motion.
+For the ISI of 600ms, evidence for the second motion is accumulated, if the second motion is to the right. If the second motion is to the left, evidence for the left is accumulated, however in the congruent condition, the 95% CI includes zero. 
+Moreover, the winning model revealed a slightly shifted starting point to the response "right", if the first motion was to the left and vice versa for an ISI of 50ms. However, the 95% credible interval included zero in both starting points (see figure ddm drift exp 1). For an ISI of 100ms, the starting point was shifted towards the threshold of the right response, if the first motion was to the left, with the 95% credibility interval excluding zero. For the same ISI, the starting point was also slightly shifted to the right threshold, if the first motion was to the right, yet with the 95% credibility interval including zero. For, an ISI of 200 and 600ms the bias was slightly shifted towards the left response if the first motion was to the left and to the right response if the first motion was to the right. However, all 95% credible intervals included zero
+Overall the winning DDM for experiment 1 revealed mainly an altered sensory processing as evidenced by the drift rates and a tendence towards an altered decision making process prior to the evidence acculumation for short ISIs. 
+
 
 ## Discussion
 
+In the first experiment it has been shown that there are crossmodal MAEs within the vestibular system in terms of direction discrimination performance if a yaw rotation is preceeded by a inertial translation in the same spatial direction. Thus, a manipulation of the otoliths apparently influence a sensory decision making process in the semicircular canals. However, MAEs are only found for short pauses between the two motion stimuli. More importantly, in a hierarchical DDM the MAEs appear to be explained by a combination of a variable drift and a shifted starting point to the opposite direction of the first motion. It remains to be seen whether for the incongruent conditions whether the correct responses are due to correct sensory evidence accumulation of the second motion or whether the evidence accumulation process is also biased by the first motion. The same response pattern for neutral trials seems to support the former explanation. 
+
 # Experiment 2
 
-The results of Experiment 1 led to the question whether the consistent directional misperception of the second motion still exists when a rotation (cue) is preceding a translation (target). The sequence of the two motions was therefore interchanged so that a left/right yaw rotation preceded a left/right translation (while the motion trajectories stayed otherwise the same). Only congruent and incongruent cues were presented, since no rotations could serve as “neutral” cues for lateral translations in the horizontal plane. A pitch or roll rotation in an upright participant would lead inevitably to a tilted/skewed subsequent motion.
+The results of Experiment 1 led to the question whether the consistent directional misperception of the second motion (motion aftereffect) still exists when a rotation (cue) is preceding a translation (target), more concretely whether the crossmodal MAE found in experiment 1  is bidirectional. The sequence of the two motions was therefore interchanged so that a left/right yaw rotation preceded a left/right translation (while the motion trajectories stayed otherwise the same). Only congruent and incongruent cues were presented, since no rotations could serve as “neutral” cues for lateral translations in the horizontal plane as a pitch or roll rotation in an upright participant would lead inevitably to a tilted/skewed subsequent motion.
 
 ## Methods
 
@@ -297,21 +342,37 @@ Experimental procedure was similar to the one in Experiment 1. Only the type of 
 
 ### Data analysis
 
-All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages.
+To describe data from experiment 2 in more detail, participants' accuracies were analyzed for each experiment with a multilevel Bayesian logistic regression model factors Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms). 
+
+<!--For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Only correct trials were included as the underlying mechanism leading to a wrong response might differ. Priors were set to the default implemented in brms.-->
+
+To jointly analyze the participants' response and response times, and to study the bias introduced by the first motion, two different hierarchical Drift Diffusion Models [@vandekerckhove_hierarchical_2011] were calculated in brms [@R-brms]. Neutral conditions were eliminated from the dataset to simplify the statistical models. 
+
+In the first model, for the drift rate fixed effects of the first direction (counter-clockwise/clockwise), the second direction were estimated together with the random effects of participants. For the non-decision time and starting point the random effects of particpants were estimated. 
+
+In the second model, for the drift rate fixed effects of the first direction (counter-clockwise/clockwise), the second direction (left/right) were estimated together with the random effects of participants. Moreover, for the starting point the fixed effects of the first motion and ISI along with the random effect of participants was estimated. For the non-decision time the random effects of participants were estimated. 
+
+The better model was selected based on the leave-one-out cross-validiation (LOO) [@vehtari_practical_2017]. 
 
 ## Results
 
-### Accuracy and Response Times
-In Fig 1 (Experiment 2) it is visible that the motion discrimination performance is around or even above chance when the prior stimulus was congruent with the motion, e.g. a counter-clockwise yaw rotation followed by a left translation. Direction discrimination performance for the second motion is even better when a yaw rotation is followed by an incongruent inertial translation. In this Experiment there are no clear MAEs. As for experiment 1, a more detailed analysis for accuracy and reaction times can be found in the supplementary materials. 
+### Accuracy 
+
+The logistic regression model (In Fig accuracy plot Experiment 2) shows that the motion discrimination performance is around (for ISIs of 50 and 100 ms) or even above chance level (for ISIs 200 and 600ms) when the prior stimulus was congruent with the motion, e.g. a counter-clockwise yaw rotation followed by a left translation. Direction discrimination performance for the second motion ia higher when a yaw rotation is followed by an incongruent inertial translation. In this Experiment there are no clear MAEs.
 
 ### Drift Diffusion Models
-
+For the second experiment, the winning model included fixed effects of the first direction (left/right), the second direction (clockwise or counter-clockwise), for the drift rate fixed effects of the first direction (left/right), the second direction (clockwise or counter-clockwise) and the random effects of participants (see figure ddm_exp1). 
+This model revealed that evidence was accumulated in the direction of the second motion for an ISI of 50, 100 and 200ms, if the second motion was to the opposite direction. If it was to the same direction, evidence for the second motion was accumulated, however with the 95% CI including zero. same direction as the first. It appears that evidence is still accumulated for the direction of the first motion when the second motion is to the oppsoite, yet those 95% credible intervals include zero. The second motion meaningfully shifted the evidence accumulation process to direction of the correct response. 
+For the ISI of 600ms, evidence for the second motion was always accumulated accumulated. The second motion did not meanigfully alter evidence accumulation (all CI include zero, mit the median around zero)
+Moreover, the winning model revealed no shift of starting point altered as all 95% CI included zero. 
 
 ## Discussion
 
+In experiment 2, no MAEs were found although participants' performance in congruent trials was still worse than in incongruent trials and was at chance level. In experiment 2 motion stimuli were the same as in experiment 1, simply in a different order. The cue stimuli in Experiment 1 were stronger in terms of intensity compared to the target stimuli. The switch of the order was switched without adapting of the intensities could explain the absence of MAEs. 
+
 # Experiment 3
 
-In Experiment 2 motion stimuli were the same as in Experiment 1, simply in a different order. The cue stimuli in Experiment 1 were stronger in terms of intensity compared to the target stimuli. Furthermore, because their order was switched in Experiment 2 without adaption of their intensities, the absence of the strong effect for error rates found in Experiment 1 can easily be explained. However, within the data of Experiment 2, there were two participants whose error rates data suggested that they consistently misinterpreted the direction of congruent cued target stimuli. It was thus hypothesized that the effect would reappear if the intensities of the stimuli in terms of distance to thresholds were in the same ratio as in Experiment 1. For this third experiment the rotation about an earth-vertical axis was chosen at an intensity 3.6 times above the threshold found by Grabherr et al. [@grabherr_vestibular_2008] and the horizontal translation was chosen at an intensity 2.6 times above the threshold found by Lim et al. (in preparation).
+In experiment 3 it was hypothesized that the MAE would reappear if the intensities of the stimuli in terms of distance to thresholds were in the same ratio as in experiment 1. For this third experiment the rotation about an earth-vertical axis was chosen at an intensity 3.6 times above the threshold found by Grabherr et al. [@grabherr_vestibular_2008] and the horizontal translation was chosen at an intensity 2.6 times above the threshold found by Lim et al. (in preparation).
 
 ## Methods
 
@@ -329,19 +390,40 @@ Design and experimental procedure were identical to Experiment 2.
 
 ### Data analysis
 
-All analyses were performed in R [@R-base] using the brms [@R-brms] and rstan [@R-rstan] packages
+To describe data from experiment 2 in more detail, participants' accuracies were analyzed for each experiment with a multilevel Bayesian logistic regression model factors Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms). 
 
+<!--For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Only correct trials were included as the underlying mechanism leading to a wrong response might differ. Priors were set to the default implemented in brms.-->
+
+To jointly analyze the participants' response and response times, and to study the bias introduced by the first motion, two different hierarchical Drift Diffusion Models [@vandekerckhove_hierarchical_2011] were calculated in brms [@R-brms]. Neutral conditions were eliminated from the dataset to simplify the statistical models. 
+
+In the first model, for the drift rate fixed effects of the first direction (counter-clockwise/clockwise), the second direction were estimated together with the random effects of participants. For the non-decision time and starting point the random effects of particpants were estimated. 
+
+In the second model, for the drift rate fixed effects of the first direction (counter-clockwise/clockwise), the second direction (left/right) were estimated together with the random effects of participants. Moreover, for the starting point the fixed effects of the first motion and ISI along with the random effect of participants was estimated. For the non-decision time the random effects of participants were estimated. 
+
+The better model was selected based on the leave-one-out cross-validiation (LOO) [@vehtari_practical_2017]. 
 
 ## Results
 
-### Accuracy and Response Times
-In Fig 1 (Experiment 3) it is again visible that the motion discrimination performance is below chance when the prior stimulus was in the same direction, e.g. a left translation follwed by a counter-clockwise yaw rotation. Direction discrimination performance is above chance level when a yaw rotation is preceeded by an incongruent or fore-aft motion. As in experiment 1, the response patterns indicate MAEs, except for ISIs of 600ms. Again, correct response times are faster for incongruent trials (left translation followed by clockwise rotation or right translation followed by counter-clockwise rotation) than for congruent trials (left translation followed by counter-clockwise rotation or right translation followed by counter-clockwise rotation), while the opposite pattern is found for incorrect response times. A more detailed analysis for accuracy and reaction times can be found in the supplementary materials. 
+### Accuracy
 
+The logistic regression model (In Fig Acc Experiment 3) revealed that the motion discrimination performance is below chance when the prior stimulus was in the same direction, e.g. a left translation follwed by a counter-clockwise yaw rotation for ISIs of 50, 100 and 200 ms. For an ISI of 600ms the discrimination performance is around chance. Direction discrimination performance is above chance level when a yaw rotation is preceeded by an incongruent or fore-aft motion. As in experiment 1, the response patterns indicate MAEs, except for ISIs of 600ms. 
+
+<!--RESPONSE TIMES STILL OPEN: Again, correct response times are faster for incongruent trials (left translation followed by clockwise rotation or right translation followed by counter-clockwise rotation) than for congruent trials (left translation followed by counter-clockwise rotation or right translation followed by counter-clockwise rotation), while the opposite pattern is found for incorrect response times. A more detailed analysis for accuracy and reaction times can be found in the supplementary materials. -->
+
+### Drift Diffusion Model
+
+Based on the LOO criterion, the selected model included fixed effects of the first motion, the second motion, and ISI on the drift rate. The starting point was allowed to vary as a function of the of the first motion and ISI (fixed effects), as well as the random effects of participants (see figure ddm_exp1). 
+This model revealed that evidence was accumulated in the direction of the first motion for all ISIs except for congruent motions at an easy of 600 ms (see figure Drit Rate, Experiment 3). The second motion did not meanigfully alter evidence accumulation for the ISIs of 50-200, as the 95% credibilty intervals of the posterior distributions of the differences within the first motions include zero (see table DIFF). For the congruent conditions and an ISI of 600 ms, the second motion appears to shift the drift rate to the correct response of the second motion, although the medians (???) still point towards evidence acculumation for the direction of the first motion. 
+Moreover, the winning model revealed a starting point shifted to the response "right", if the first motion was to the left and the ISI 50ms. For the shortest ISI an a motion to the right, the bias was slightly shifted towards the threshold of the left response, but the 95% credibility intervall included 0. The opposite is seen for an ISI of 100ms and the first motion to the left. For an ISI of 100 ms and a motion to the right as well as an ISI of 200 ms and a motion to the left, there was no shift of the starting point. However, for an ISI of 200ms and the first motion to the right, the starting point was shifted towards the threshold of the "right" response. The same pattern is found for an ISI of 600ms. There, the bias was shifted towards the response threshold "left", if the first motion was in the left direction and shifted to the threshold "right", if the first motion was in the right direction. 
+Overall the winning DDM for experiment 3 revealed a combination of altered sensory processing as evidenced by the drift rates and an altered decision making process prior to the evidence acculumation as shown by the shifted starting points for short ISIs. 
 
 ## Discussion
 
+Performance data clearly indicate MAEs for short ISI even stronger than in experiment 1. Thus, in experiment 3 it has been shown that the crossmodal MAE within the vestibular system are also present when a yaw translation is followed by a inertial translation in the same spatial direction. Thus, crossmodal vestibular MAEs appear to be bidirectional. The analysis of the hierarchical DDM has shown that the MAE's underlying decision making process could be explained by a combination of a variable drift and a shifted starting point to the opposite direction of the first motion. Compared to experiment 2, the intensity of the first motion (yaw rotation) intensity was adapted to be similar to the intensity of the first motion in experiment 1 (translation) 
+
 # General Discussion
 
+In three experiments we 
 - ISIs are longer than compared to Crane. At their ISI our effect almost disapears. They argue that more reliable at 1 or 3 sec than 0.5 sec, longer latency? In contrast with our result, but they used different paradigm, weaker stimuli or Maybe not same underlying mechanism? But in Yaw Rotation (Coniglio and Crane, 2014) showed similar effect: with increasing ISI aftereffect became weaker, although they used longer ISI than we did. 
 
 - In the visual modality it is usually shown after several seconds of stimulation but has also been shown for very short stimulation of 320ms (kanai verstraten 2005)
@@ -359,10 +441,10 @@ Of special interest: Visuo-vestibular integration. This is integration is highly
 # Supplementary Methods and Results
 
 ## Experiment 1
-To describe data from experiment 1 in more detail, a Bayesian multilevel logistic regression for accuracy with treatment coded factors Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was calculated. For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors accuracy (correct, wrong), Cue Congruence (congruent, incongruent, neutral) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Priors were set to default in brms.
 
-## Experiment 3
-To describe data from experiment 2 and 3 in more detail, for each experiment a Bayesian multilevel logistic regression for accuracy with treatment coded factors Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms) was calculated. For the reaction times a Bayesian multilevel regression with a ex-Gaussian likelihood function and factors accuracy (correct, wrong), Cue Congruence (congruent, incongruent) and ISI (50ms, 100ms, 200ms, 600ms) was computed. Priors were set to default in brms.
+
+## Experiment 2 and 3
+
 
 \newpage
 
